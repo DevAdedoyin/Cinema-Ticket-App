@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const backgroundColor = BoxDecoration(
+const backgroundDecoration = BoxDecoration(
   gradient: LinearGradient(
     colors: [
       Color.fromRGBO(51, 51, 51, 1),
