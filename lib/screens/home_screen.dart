@@ -15,7 +15,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      decoration: backgroundDecoration,
-    ));
+            decoration: backgroundDecoration,
+            child: Column(
+              children: const [
+                HeaderWidget(),
+              ],
+            )));
+  }
+}
+
+class HeaderWidget extends StatelessWidget {
+  const HeaderWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
   }
 }
