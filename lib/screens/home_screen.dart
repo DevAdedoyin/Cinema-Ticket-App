@@ -14,13 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            decoration: backgroundDecoration,
-            child: Column(
-              children: const [
-                HeaderWidget(),
-              ],
-            )));
+      backgroundColor: Color.fromRGBO(9, 10, 14, 1),
+    );
   }
 }
 
@@ -29,8 +24,6 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
