@@ -1,20 +1,35 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MovieModel {
   @required
-  final title;
+  final String? title;
   @required
-  final image;
+  final String? image;
   @required
-  final icon;
+  final Icon? icon;
   @required
-  final ratingNumber;
-  final directorName;
-  final wirterName;
-  final description;
+  final String? ratingNumber;
+  final String? directorName;
+  final String? writerName;
+  final String? description;
 
-  MovieModel(this.directorName, this.wirterName, this.description,
-      {this.title, this.image, this.icon, this.ratingNumber});
-
-  
+  MovieModel(
+    this.title,
+    this.image,
+    this.icon,
+    this.ratingNumber, {
+    this.directorName,
+    this.writerName,
+    this.description,
+  });
 }
+
+List<MovieModel> movieDataList = [
+  MovieModel(
+    'directorName',
+    'writerName',
+    Icon(Icons.star, ),
+    ''
+  )
+];
