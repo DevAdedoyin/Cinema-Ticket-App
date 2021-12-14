@@ -4,11 +4,8 @@ import 'package:movie_ticket_app/themes.dart/colors.dart';
 
 class MovieModel {
   final String? title;
-
   final String? image;
-
   final Icon? icon;
-
   final String? ratingNumber;
   final String? directorName;
   final String? writerName;
