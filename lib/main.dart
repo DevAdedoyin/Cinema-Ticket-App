@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/screens/home_screen/home_screen.dart';
 import 'package:movie_ticket_app/screens/splash_screen.dart';
+import 'package:movie_ticket_app/themes.dart/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movie Ticket',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue, scaffoldBackgroundColor: backgroundColor),
       home: const HomeScreen(),
     );
   }
