@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:movie_ticket_app/themes.dart/bg_decoration.dart';
+import 'package:movie_ticket_app/themes.dart/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
