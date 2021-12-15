@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_ticket_app/screens/home_screen/tabs/home_tab/home_header.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -10,6 +11,10 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: const [
+        Header(),
+      ],
+    );
   }
 }

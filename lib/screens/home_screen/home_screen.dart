@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_ticket_app/screens/home_screen/tabs/home_tab.dart';
+import 'package:movie_ticket_app/screens/home_screen/tabs/home_tab/home_tab.dart';
 import 'package:movie_ticket_app/screens/home_screen/tabs/profile_tab.dart';
 import 'package:movie_ticket_app/screens/home_screen/tabs/ticket_tab.dart';
 import 'package:movie_ticket_app/state_manager/states.dart';
