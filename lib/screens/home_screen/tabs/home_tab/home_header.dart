@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 
@@ -7,37 +9,45 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
+      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 60),
       child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              RichText(
-                text: TextSpan(children: [
-                  const TextSpan(
-                      text: 'Hello  ',
+          TweenAnimationBuilder(
+            duration: const Duration(seconds: 1),
+            tween: Tween<double>(begin: 0, end: 0.6),
+            builder: (_, double value, __) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          fontSize: value * 30,
+                        ),
+                        children: [
+                          const TextSpan(
+                              text: 'Hello ',
+                              style: TextStyle(
+                                  color: white, fontWeight: FontWeight.bold)),
+                          TextSpan(
+                              text: 'Dash!',
+                              style: TextStyle(
+                                  color: white.withOpacity(value),
+                                  fontWeight: FontWeight.bold))
+                        ]),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text('Book your favorite movies',
                       style: TextStyle(
-                          color: white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold)),
-                  TextSpan(
-                      text: 'Dash!',
-                      style: TextStyle(
-                          color: white.withOpacity(0.5),
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold))
-                ]),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text('Book your favorite movies',
-                  style: TextStyle(
-                    color: white.withOpacity(0.45),
-                    fontSize: 16,
-                  )),
-            ],
+                          color: white.withOpacity(value + 0.1),
+                          fontSize: 16,
+                          wordSpacing: value * 2)),
+                ],
+              );
+            },
+            curve: Curves.easeInSine,
           ),
           const Spacer(),
           ClipOval(
