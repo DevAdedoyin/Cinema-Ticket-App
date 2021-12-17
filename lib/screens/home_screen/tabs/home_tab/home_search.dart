@@ -12,7 +12,7 @@ class HomeSearch extends StatelessWidget {
         tween: Tween<double>(begin: 0, end: 0.25),
         builder: (_, double val, __) {
           return Container(
-            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
+            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 50),
             child: TextField(
               style: const TextStyle(color: white),
               cursorColor: white.withOpacity(0.7),
@@ -38,16 +38,16 @@ class HomeSearch extends StatelessWidget {
                       ),
                       Icon(
                         Icons.mic,
-                        color: white.withOpacity(0.5),
+                        color: white.withOpacity(0.6),
                       )
                     ],
                   ),
                 ),
                 hintText: 'Search',
                 hintStyle: TextStyle(
-                    color: white.withOpacity(0.4),
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                  color: white.withOpacity(0.4),
+                  fontSize: 18,
+                ),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(val * 55),
                     borderSide: BorderSide.none),
