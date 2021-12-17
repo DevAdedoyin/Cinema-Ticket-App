@@ -17,7 +17,7 @@ class HomeSearch extends StatelessWidget {
                 filled: true,
                 fillColor: white.withOpacity(val),
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(val * 48),
                     borderSide: BorderSide.none),
               ),
             ),
