@@ -6,13 +6,22 @@ class HomeSearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: TextField(
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: white.withOpacity(0.2),
-        ),
-      ),
-    );
+    return TweenAnimationBuilder(
+        duration: const Duration(milliseconds: 800),
+        tween: Tween<double>(begin: 0, end: 0.25),
+        builder: (_, double val, __) {
+          return Container(
+            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
+            child: TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: white.withOpacity(val),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none),
+              ),
+            ),
+          );
+        });
   }
 }
