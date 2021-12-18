@@ -18,16 +18,26 @@ class _HomeMoviesState extends State<HomeMovies> {
           scrollDirection: Axis.horizontal,
           itemCount: movieDataList.length,
           itemBuilder: (_, index) {
-            return _card();
+            return _card(movieDataList[index].image!);
           }),
     );
     // _card();
   }
 }
 
-Widget _card() => Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
-      height: 380,
-      width: 250,
-      child: Card(),
+Widget _card(String img) => ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        height: 380,
+        width: 270,
+        child: Card(
+            elevation: 10,
+            child: Image.asset(
+              img,
+              fit: BoxFit.cover,
+            ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(7))),
+      ),
     );
