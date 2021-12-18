@@ -9,7 +9,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 25, right: 25, top: 60, bottom: 35),
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 60, bottom: 35),
       child: Row(
         children: [
           TweenAnimationBuilder(

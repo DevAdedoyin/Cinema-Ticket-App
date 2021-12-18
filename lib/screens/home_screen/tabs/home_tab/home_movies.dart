@@ -26,7 +26,7 @@ class _HomeMoviesState extends State<HomeMovies> {
 }
 
 Widget _card(String img) => ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(30),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
         height: 380,

@@ -12,7 +12,7 @@ class HomeSearch extends StatelessWidget {
         tween: Tween<double>(begin: 0, end: 0.25),
         builder: (_, double val, __) {
           return Container(
-            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 30),
+            margin: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
             child: TextField(
               style: const TextStyle(color: white),
               cursorColor: white.withOpacity(0.7),
