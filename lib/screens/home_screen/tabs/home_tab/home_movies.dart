@@ -67,8 +67,7 @@ class _HomeMoviesState extends State<HomeMovies> {
         margin: const EdgeInsets.symmetric(horizontal: 10),
         height: 380,
         width: 270,
-        decoration: BoxDecoration(
-            color: white, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.asset(
