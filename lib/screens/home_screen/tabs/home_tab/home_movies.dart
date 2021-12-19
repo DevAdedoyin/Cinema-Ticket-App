@@ -72,7 +72,8 @@ class _HomeMoviesState extends State<HomeMovies> {
         height: 380,
         width: 270,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10), color: white),
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Stack(children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),

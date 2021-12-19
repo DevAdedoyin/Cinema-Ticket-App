@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Obx(() => _tabs[homeState.currentTab.value]),
       bottomNavigationBar: bottomNavBar(),
     );
