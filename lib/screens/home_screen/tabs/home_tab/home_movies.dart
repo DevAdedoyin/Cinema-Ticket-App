@@ -50,32 +50,57 @@ class _HomeMoviesState extends State<HomeMovies> {
                       const SizedBox(
                         width: 37,
                       ),
-                      _card(movieDataList[0].image!)
+                      _card(
+                        movieDataList[0].image!,
+                        movieDataList[0].ratingNumber!,
+                      )
                     ],
                   )
                 : Transform.rotate(
                     angle: _angle!,
                     child: _card(
                       movieDataList[index].image!,
+                      movieDataList[index].ratingNumber!,
                     ),
                   );
           }),
     );
   }
 
-  _card(String img) => Container(
+  _card(String img, String ratingNum) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
         height: 380,
         width: 270,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.asset(
-            img,
-            height: 380,
-            width: 270,
-            fit: BoxFit.cover,
+        child: Stack(children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              img,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
+          Positioned(
+              top: 200,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.star,
+                      color: yellow,
+                      size: 20,
+                    ),
+                    Text(
+                      ratingNum,
+                      style: const TextStyle(
+                          color: gold,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ))
+        ]),
       );
 }

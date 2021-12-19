@@ -24,7 +24,8 @@ class _HomeTabState extends State<HomeTab> {
           margin: const EdgeInsets.only(left: 25, right: 25, bottom: 15),
           child: const Text(
             'Featured Movies',
-            style: TextStyle(color: white, fontSize: 17),
+            style: TextStyle(
+                color: white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
         const HomeMovies()
