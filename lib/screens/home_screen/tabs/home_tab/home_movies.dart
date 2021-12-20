@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:movie_ticket_app/models/movie_model.dart';
+import 'package:movie_ticket_app/screens/movie_detail/movie_detail.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 
 class HomeMovies extends StatefulWidget {
@@ -42,32 +44,38 @@ class _HomeMoviesState extends State<HomeMovies> {
           scrollDirection: Axis.horizontal,
           itemCount: movieDataList.length,
           itemBuilder: (_, index) {
-            print(_controller.offset);
-            print(_angle);
+            // print(_controller.offset);
+            // print(_angle);
             return index == 0
                 ? Row(
                     children: [
                       const SizedBox(
                         width: 37,
                       ),
-                      _card(
-                        movieDataList[0].image!,
-                        movieDataList[0].ratingNumber!,
+                      InkWell(
+                        onTap: () => Get.to(() => MovieDetail(index)),
+                        child: _card(
+                          movieDataList[0].image!,
+                          movieDataList[0].ratingNumber!,
+                        ),
                       )
                     ],
                   )
                 : Transform.rotate(
                     angle: _angle!,
-                    child: _card(
-                      movieDataList[index].image!,
-                      movieDataList[index].ratingNumber!,
+                    child: InkWell(
+                      onTap: () => Get.to(() => MovieDetail(index)),
+                      child: _card(
+                        movieDataList[index].image!,
+                        movieDataList[index].ratingNumber!,
+                      ),
                     ),
                   );
           }),
     );
   }
 
-  _card(String img, String ratingNum) => Container(
+  Widget _card(String img, String ratingNum) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
         height: 380,
         width: 270,

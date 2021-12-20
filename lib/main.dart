@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/screens/home_screen/home_screen.dart';
 import 'package:movie_ticket_app/screens/splash_screen.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Movie Ticket',
       theme: ThemeData(
           primarySwatch: Colors.blue, scaffoldBackgroundColor: backgroundColor),
