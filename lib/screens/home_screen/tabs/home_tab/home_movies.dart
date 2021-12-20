@@ -54,9 +54,13 @@ class _HomeMoviesState extends State<HomeMovies> {
                       ),
                       InkWell(
                         onTap: () => Get.to(() => MovieDetail(index)),
-                        child: _card(
-                          movieDataList[0].image!,
-                          movieDataList[0].ratingNumber!,
+                        child: Hero(
+                          tag: index,
+                          transitionOnUserGestures: true,
+                          child: _card(
+                            movieDataList[0].image!,
+                            movieDataList[0].ratingNumber!,
+                          ),
                         ),
                       )
                     ],
@@ -65,9 +69,12 @@ class _HomeMoviesState extends State<HomeMovies> {
                     angle: _angle!,
                     child: InkWell(
                       onTap: () => Get.to(() => MovieDetail(index)),
-                      child: _card(
-                        movieDataList[index].image!,
-                        movieDataList[index].ratingNumber!,
+                      child: Hero(
+                        tag: index,
+                        child: _card(
+                          movieDataList[index].image!,
+                          movieDataList[index].ratingNumber!,
+                        ),
                       ),
                     ),
                   );
