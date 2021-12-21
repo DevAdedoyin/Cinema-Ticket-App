@@ -10,23 +10,32 @@ class MovieDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: Column(
         children: [
           SizedBox(
             height: 380,
-            width: double.maxFinite,
-            child: Hero(
-              tag: index,
-              child: Image.asset(
-                movieDataList[index].image!,
-                fit: BoxFit.fill,
-              ),
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: double.maxFinite,
+                  child: Hero(
+                    tag: index,
+                    child: Image.asset(
+                      movieDataList[index].image!,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Positioned(
+                    bottom: 5,
+                    left: 5,
+                    child: ratingsAndImdb(
+                      10,
+                      movieDataList[index].ratingNumber!,
+                    )),
+              ],
             ),
           ),
-          Positioned(
-              bottom: 5,
-              left: 10,
-              child: ratingsAndImdb(20, movieDataList[index].ratingNumber!))
         ],
       ),
     );
