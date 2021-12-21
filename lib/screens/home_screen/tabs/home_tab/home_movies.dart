@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:movie_ticket_app/models/movie_model.dart';
 import 'package:movie_ticket_app/screens/movie_detail/movie_detail.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
+import 'package:movie_ticket_app/widgets/ratings_and_imdb.dart';
 
 class HomeMovies extends StatefulWidget {
   const HomeMovies({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class _HomeMoviesState extends State<HomeMovies> {
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
               img,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               height: 380,
               width: 270,
             ),
@@ -102,48 +103,8 @@ class _HomeMoviesState extends State<HomeMovies> {
           Positioned(
               top: 200,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
-                          Icons.star,
-                          color: yellow,
-                          size: 20,
-                        ),
-                        Text(
-                          ratingNum,
-                          style: const TextStyle(
-                              color: gold,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 130,
-                    ),
-                    Container(
-                      width: 65,
-                      height: 23,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: gold,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Text(
-                        'IMDB 7.5',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: backgroundColor),
-                      ),
-                    )
-                  ],
-                ),
-              ))
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: ratingsAndImdb(130, ratingNum)))
         ]),
       );
 }

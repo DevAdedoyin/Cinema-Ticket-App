@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/screens/home_screen/home_screen.dart';
-import 'package:movie_ticket_app/screens/splash_screen.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 import 'package:get/get.dart';
 
