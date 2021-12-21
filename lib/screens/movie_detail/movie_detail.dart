@@ -8,25 +8,22 @@ class MovieDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            SizedBox(
-              height: 400,
-              width: double.maxFinite,
-              child: FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Hero(
-                  tag: index,
-                  child: Image.asset(
-                    movieDataList[index].image!,
-                  ),
-                ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            height: 350,
+            width: double.maxFinite,
+            child: Hero(
+              tag: index,
+              child: Image.asset(
+                movieDataList[index].image!,
+                fit: BoxFit.fill,
+                isAntiAlias: true,
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
