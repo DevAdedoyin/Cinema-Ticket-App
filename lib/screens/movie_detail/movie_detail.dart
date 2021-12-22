@@ -127,11 +127,7 @@ class _MovieDetailState extends State<MovieDetail> {
                   return GestureDetector(
                       onTap: () {
                         setState(() {
-                          print('TAPPED');
-                          // _position = index;
-                          _wdColor = movieDataList[widget.index].isTapped!
-                              ? red!
-                              : backgroundColor;
+                          _position = _position == index ? null : index;
                         });
                       },
                       child: weekdayCard(index, widget.index, _wdColor));
@@ -145,13 +141,15 @@ class _MovieDetailState extends State<MovieDetail> {
     );
   }
 
-  Color _wdColor = backgroundColor;
+  int? _position;
+  final Color _wdColor = backgroundColor;
 
   Widget weekdayCard(int index, int widgetIndex, Color color) => Container(
         padding: const EdgeInsets.symmetric(vertical: 7),
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: color,
+          color:
+              _position != null && index == _position ? red! : backgroundColor,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: white.withOpacity(0.5), width: 0.5),
         ),

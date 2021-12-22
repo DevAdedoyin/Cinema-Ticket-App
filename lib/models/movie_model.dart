@@ -11,7 +11,7 @@ class MovieModel {
   final String? writerName;
   final String? description;
   final Map<String, String>? weekDays;
-  final bool? isTapped;
+  bool? isTapped;
 
   MovieModel(
       {this.title,
