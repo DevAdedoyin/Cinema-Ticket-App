@@ -171,7 +171,9 @@ class _MovieDetailState extends State<MovieDetail> {
             Text(
               movieDataList[widgetIndex].weekDays!.keys.elementAt(index),
               style: TextStyle(
-                color: white.withOpacity(0.5),
+                color: _position != null && index == _position
+                    ? white
+                    : white.withOpacity(0.5),
               ),
             ),
             const SizedBox(
@@ -180,7 +182,9 @@ class _MovieDetailState extends State<MovieDetail> {
             Text(
               movieDataList[widgetIndex].weekDays!.values.elementAt(index),
               style: TextStyle(
-                  color: white.withOpacity(0.5),
+                  color: _position != null && index == _position
+                      ? white
+                      : white.withOpacity(0.5),
                   fontSize: 25,
                   fontWeight: FontWeight.bold),
             )
