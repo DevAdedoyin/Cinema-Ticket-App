@@ -134,6 +134,22 @@ class _MovieDetailState extends State<MovieDetail> {
                 },
                 shrinkWrap: true,
               ),
+            ),
+            Container(
+              width: 250,
+              height: 45,
+              margin: const EdgeInsets.only(bottom: 20, top: 25),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text(
+                  'Reservation',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(red),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)))),
+              ),
             )
           ],
         ),
