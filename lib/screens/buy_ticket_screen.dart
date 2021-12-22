@@ -93,10 +93,9 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                             ? null
                             : () {
                                 setState(() {
-                                  _seatPos = _seatPos == index ? null : index;
-                                  selectedList.contains(_seatPos)
-                                      ? selectedList.remove(_seatPos)
-                                      : selectedList.add(_seatPos!);
+                                  selectedList.contains(index)
+                                      ? selectedList.remove(index)
+                                      : selectedList.add(index);
                                 });
                               },
                         child: Container(
