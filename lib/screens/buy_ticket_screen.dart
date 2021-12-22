@@ -88,7 +88,7 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                     : Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: white),
+                            color: seatColor),
                       );
               },
               itemCount: 54,
