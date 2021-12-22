@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:movie_ticket_app/models/movie_model.dart';
+import 'package:movie_ticket_app/screens/buy_ticket_screen.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 import 'package:movie_ticket_app/widgets/ratings_and_imdb.dart';
 
@@ -140,7 +142,7 @@ class _MovieDetailState extends State<MovieDetail> {
               height: 45,
               margin: const EdgeInsets.only(bottom: 20, top: 25),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => BuyTicketScreen(widget.index)),
                 child: const Text(
                   'Reservation',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -148,7 +150,7 @@ class _MovieDetailState extends State<MovieDetail> {
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(red),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)))),
+                        borderRadius: BorderRadius.circular(15)))),
               ),
             )
           ],

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_ticket_app/models/movie_model.dart';
-import 'package:movie_ticket_app/screens/movie_detail/movie_detail.dart';
+import 'package:movie_ticket_app/screens/movie_detail.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 import 'package:movie_ticket_app/widgets/ratings_and_imdb.dart';
 
