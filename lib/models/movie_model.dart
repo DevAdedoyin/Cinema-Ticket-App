@@ -11,18 +11,21 @@ class MovieModel {
   final String? writerName;
   final String? description;
   final Map<String, String>? weekDays;
+  final List<String>? showTime;
   bool? isTapped;
 
-  MovieModel(
-      {this.title,
-      this.image,
-      this.icon,
-      this.ratingNumber,
-      this.directorName,
-      this.writerName,
-      this.description,
-      this.weekDays,
-      this.isTapped});
+  MovieModel({
+    this.title,
+    this.image,
+    this.icon,
+    this.ratingNumber,
+    this.directorName,
+    this.writerName,
+    this.description,
+    this.weekDays,
+    this.showTime,
+    this.isTapped,
+  });
 }
 
 List<MovieModel> movieDataList = [
@@ -42,6 +45,7 @@ List<MovieModel> movieDataList = [
         'Fri': '6',
         'Sat': '7'
       },
+      showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '6:00 PM', '9:00 PM'],
       isTapped: false),
   MovieModel(
       title: 'Army of Thives',
@@ -52,6 +56,7 @@ List<MovieModel> movieDataList = [
       directorName: 'Matthias Schweighöfer',
       writerName: 'Zack Snyder and Shay Hatten',
       weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      showTime: ['10:00 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
       isTapped: false),
   MovieModel(
       title: 'Xtreme',
@@ -62,6 +67,7 @@ List<MovieModel> movieDataList = [
       directorName: 'Daniel Benmayor',
       writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez',
       weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      showTime: ['10:30 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
       isTapped: false),
   MovieModel(
       title: 'The Tomorrow War',
@@ -78,6 +84,7 @@ List<MovieModel> movieDataList = [
         'Wed': '4',
         'Fri': '6',
       },
+      showTime: ['10:45 AM', '1:00 PM', '3:30 PM', '6:00 PM', '8:30 PM'],
       isTapped: false),
   MovieModel(
       title: 'Sweet Girl',
@@ -88,6 +95,7 @@ List<MovieModel> movieDataList = [
       directorName: 'Brian Andrew Mendoza',
       writerName: 'Philip Eisner and Gregg Hurwitz',
       weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      showTime: ['10:00 AM', '12:30 PM', '3:30 PM', '6:00 PM', '8:15 PM'],
       isTapped: false),
   MovieModel(
       title: 'The Unforgiveable',
@@ -97,6 +105,7 @@ List<MovieModel> movieDataList = [
           'The Unforgivable is a 2021 drama film directed by Nora Fingscheidt and written by Peter Craig, Hillary Seitz and Courtenay Miles,[2] based on the 2009 British miniseries Unforgiven written by Sally Wainwright. The film stars Sandra Bullock as a woman who attempts to rebuild her life after serving time in prison for committing a violent crime. It also stars Vincent D\'Onofrio, Jon Bernthal, Viola Davis, Richard Thomas, Linda Emond, Aisling Franciosi, Rob Morgan.',
       directorName: 'Nora Fingscheidt',
       writerName: 'Peter Craig, Hillary Seitz and Courtenay Miles',
+      showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '5:30 PM', '8:00 PM'],
       isTapped: false),
   MovieModel(
       title: 'Night Books',
@@ -114,6 +123,7 @@ List<MovieModel> movieDataList = [
         'Fri': '6',
         'Sat': '7'
       },
+      showTime: ['10:00 AM', '1:00 PM', '3:30 PM', '6:30 PM', '9:00 PM'],
       isTapped: false),
   MovieModel(
       title: 'Intrusion',
@@ -124,5 +134,11 @@ List<MovieModel> movieDataList = [
       directorName: 'Adam Salky',
       writerName: 'Christopher Sparling',
       weekDays: {'Sun': '1', 'Mon': '2', 'Tue': '3', 'Fri': '6', 'Sat': '7'},
+      showTime: [
+        '10:05 AM',
+        '1:05 PM',
+        '4:30 PM',
+        '6:30 PM',
+      ],
       isTapped: false),
 ];
