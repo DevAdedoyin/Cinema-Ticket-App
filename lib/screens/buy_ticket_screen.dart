@@ -74,7 +74,7 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 9, crossAxisSpacing: 10, mainAxisSpacing: 20),
+                  crossAxisCount: 9, crossAxisSpacing: 10, mainAxisSpacing: 25),
               itemBuilder: (_, int index) {
                 return index == 0 ||
                         index == 1 ||
@@ -85,15 +85,32 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                         index == 46 ||
                         index == 45
                     ? const SizedBox()
-                    : Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(9),
-                            color: movieDataList[widget.index]
-                                    .reservedSeat!
-                                    .values
-                                    .contains(index)
-                                ? white
-                                : seatColor),
+                    : GestureDetector(
+                        onTap: movieDataList[widget.index]
+                                .reservedSeat!
+                                .values
+                                .contains(index)
+                            ? null
+                            : () {
+                                setState(() {
+                                  _seatPos = _seatPos == index ? null : index;
+                                  selectedList.contains(_seatPos)
+                                      ? selectedList.remove(_seatPos)
+                                      : selectedList.add(_seatPos!);
+                                });
+                              },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(9),
+                              color: movieDataList[widget.index]
+                                      .reservedSeat!
+                                      .values
+                                      .contains(index)
+                                  ? white
+                                  : selectedList.contains(index)
+                                      ? red
+                                      : seatColor),
+                        ),
                       );
               },
               itemCount: 54,
@@ -105,6 +122,8 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
     );
   }
 
+  List<int> selectedList = [];
+  int? _seatPos;
   int? _position;
 
   Widget timeCard(int pos) => Container(
