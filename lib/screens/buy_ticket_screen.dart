@@ -23,8 +23,10 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
           ),
           Text(
             movieDataList[widget.index].title!,
-            style: const TextStyle(
-                color: white, fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: white.withOpacity(0.7),
+                fontSize: 30,
+                fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 40,
@@ -61,13 +63,38 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
             height: 15,
           ),
           Text(
-            'Screen',
+            'SCREEN',
             style: TextStyle(
-                color: white.withOpacity(0.7),
-                fontSize: 17,
+                color: white.withOpacity(0.5),
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic),
           ),
-          
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 9, crossAxisSpacing: 10, mainAxisSpacing: 20),
+              itemBuilder: (_, int index) {
+                return index == 0 ||
+                        index == 1 ||
+                        index == 7 ||
+                        index == 8 ||
+                        index == 52 ||
+                        index == 53 ||
+                        index == 46 ||
+                        index == 45
+                    ? const SizedBox()
+                    : Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: white),
+                      );
+              },
+              itemCount: 54,
+              shrinkWrap: true,
+            ),
+          )
         ],
       ),
     );
