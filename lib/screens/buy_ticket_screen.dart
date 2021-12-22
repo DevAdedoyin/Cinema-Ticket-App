@@ -45,7 +45,29 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
               },
               itemCount: movieDataList[widget.index].showTime!.length,
             ),
-          )
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            height: 3,
+            width: 270,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [white, backgroundColor]),
+                borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(20), right: Radius.circular(20))),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Text(
+            'Screen',
+            style: TextStyle(
+                color: white.withOpacity(0.7),
+                fontSize: 17,
+                fontStyle: FontStyle.italic),
+          ),
+          
         ],
       ),
     );
