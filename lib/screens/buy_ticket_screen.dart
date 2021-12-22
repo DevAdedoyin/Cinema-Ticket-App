@@ -3,10 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_ticket_app/models/movie_model.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 
-class BuyTicketScreen extends StatelessWidget {
+class BuyTicketScreen extends StatefulWidget {
   final int index;
   const BuyTicketScreen(this.index, {Key? key}) : super(key: key);
 
+  @override
+  State<BuyTicketScreen> createState() => _BuyTicketScreenState();
+}
+
+class _BuyTicketScreenState extends State<BuyTicketScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +22,7 @@ class BuyTicketScreen extends StatelessWidget {
             height: 50,
           ),
           Text(
-            movieDataList[index].title!,
+            movieDataList[widget.index].title!,
             style: const TextStyle(
                 color: white, fontSize: 30, fontWeight: FontWeight.bold),
           ),
@@ -29,62 +34,68 @@ class BuyTicketScreen extends StatelessWidget {
             height: 80,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, pos) {
-                return Card(
-                  margin: const EdgeInsets.symmetric(horizontal: 15),
-                  elevation: 20,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ),
-                      side: BorderSide(
-                          color: white.withOpacity(0.3), width: 0.5)),
-                  child: Container(
-                    color: backgroundColor,
-                    height: 80,
-                    width: 60,
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Icon(
-                          Icons.access_time_outlined,
-                          size: 14,
-                          color: white.withOpacity(0.5),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          movieDataList[index].showTime![pos].split(' ').last,
-                          style: TextStyle(
-                              color: white.withOpacity(0.5),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          movieDataList[index].showTime![pos].split(' ').first,
-                          style: TextStyle(
-                              color: white.withOpacity(
-                                0.5,
-                              ),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
+              itemBuilder: (_, int? pos) {
+                return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _position = _position == pos ? null : pos;
+                      });
+                    },
+                    child: timeCard(pos!));
               },
-              itemCount: movieDataList[index].showTime!.length,
+              itemCount: movieDataList[widget.index].showTime!.length,
             ),
           )
         ],
       ),
     );
   }
+
+  int? _position;
+
+  Widget timeCard(int pos) => Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        height: 80,
+        width: 60,
+        decoration: BoxDecoration(
+            color: pos != _position ? backgroundColor : red,
+            border: Border.all(color: white.withOpacity(0.2), width: 0.7),
+            borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 5,
+            ),
+            Icon(
+              Icons.access_time_outlined,
+              size: 14,
+              color: pos == _position ? white : white.withOpacity(0.5),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              movieDataList[widget.index].showTime![pos].split(' ').last,
+              style: TextStyle(
+                  color: pos == _position ? white : white.withOpacity(0.5),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              movieDataList[widget.index].showTime![pos].split(' ').first,
+              style: TextStyle(
+                  color: pos == _position
+                      ? white
+                      : white.withOpacity(
+                          0.5,
+                        ),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
+          ],
+        ),
+      );
 }
