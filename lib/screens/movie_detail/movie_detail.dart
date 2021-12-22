@@ -121,7 +121,7 @@ class _MovieDetailState extends State<MovieDetail> {
             SizedBox(
               height: 80,
               child: ListView.builder(
-                itemCount: movieDataList.length,
+                itemCount: movieDataList[widget.index].weekDays!.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return GestureDetector(
@@ -145,6 +145,30 @@ class _MovieDetailState extends State<MovieDetail> {
                               color: gold,
                               borderRadius: BorderRadius.circular(10),
                             ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            movieDataList[widget.index]
+                                .weekDays!
+                                .keys
+                                .elementAt(index),
+                            style: TextStyle(
+                              color: white.withOpacity(0.5),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Text(
+                            movieDataList[widget.index]
+                                .weekDays!
+                                .values
+                                .elementAt(index),
+                            style: TextStyle(
+                              
+                                color: white.withOpacity(0.5), fontSize: 25),
                           )
                         ],
                       ),
