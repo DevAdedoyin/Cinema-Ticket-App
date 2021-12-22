@@ -12,7 +12,7 @@ class MovieModel {
   final String? description;
   final Map<String, String>? weekDays;
   final List<String>? showTime;
-  bool? isTapped;
+  final List<int>? reservedSeat;
 
   MovieModel({
     this.title,
@@ -24,7 +24,7 @@ class MovieModel {
     this.description,
     this.weekDays,
     this.showTime,
-    this.isTapped,
+    this.reservedSeat,
   });
 }
 
@@ -45,8 +45,22 @@ List<MovieModel> movieDataList = [
         'Fri': '6',
         'Sat': '7'
       },
-      showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '6:00 PM', '9:00 PM'],
-      isTapped: false),
+      showTime: [
+        '10:00 AM',
+        '12:30 PM',
+        '3:00 PM',
+        '6:00 PM',
+        '9:00 PM'
+      ],
+      reservedSeat: [
+        13,
+        24,
+        34,
+        35,
+        47,
+        50,
+        19
+      ]),
   MovieModel(
       title: 'Army of Thives',
       image: 'assets/images/armyofthieves.jpg',
@@ -57,7 +71,7 @@ List<MovieModel> movieDataList = [
       writerName: 'Zack Snyder and Shay Hatten',
       weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:00 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
-      isTapped: false),
+      reservedSeat: [19, 24, 30, 35, 48, 51, 23, 38]),
   MovieModel(
       title: 'Xtreme',
       image: 'assets/images/xtreme.jpg',
@@ -68,7 +82,7 @@ List<MovieModel> movieDataList = [
       writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez',
       weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:30 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
-      isTapped: false),
+      reservedSeat: [15, 20, 35, 30, 37, 49, 19]),
   MovieModel(
       title: 'The Tomorrow War',
       image: 'assets/images/tomorowar.jpg',
@@ -84,8 +98,22 @@ List<MovieModel> movieDataList = [
         'Wed': '4',
         'Fri': '6',
       },
-      showTime: ['10:45 AM', '1:00 PM', '3:30 PM', '6:00 PM', '8:30 PM'],
-      isTapped: false),
+      showTime: [
+        '10:45 AM',
+        '1:00 PM',
+        '3:30 PM',
+        '6:00 PM',
+        '8:30 PM'
+      ],
+      reservedSeat: [
+        2,
+        4,
+        30,
+        35,
+        44,
+        50,
+        34
+      ]),
   MovieModel(
       title: 'Sweet Girl',
       image: 'assets/images/sweetgirl.jpg',
@@ -96,7 +124,7 @@ List<MovieModel> movieDataList = [
       writerName: 'Philip Eisner and Gregg Hurwitz',
       weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:00 AM', '12:30 PM', '3:30 PM', '6:00 PM', '8:15 PM'],
-      isTapped: false),
+      reservedSeat: [3, 23, 30, 15, 46, 5, 49]),
   MovieModel(
       title: 'The Unforgiveable',
       image: 'assets/images/unforgiveable.jpg',
@@ -106,7 +134,7 @@ List<MovieModel> movieDataList = [
       directorName: 'Nora Fingscheidt',
       writerName: 'Peter Craig, Hillary Seitz and Courtenay Miles',
       showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '5:30 PM', '8:00 PM'],
-      isTapped: false),
+      reservedSeat: [2, 4, 33, 15, 46, 5, 27]),
   MovieModel(
       title: 'Night Books',
       image: 'assets/images/nightbooks.jpg',
@@ -123,8 +151,21 @@ List<MovieModel> movieDataList = [
         'Fri': '6',
         'Sat': '7'
       },
-      showTime: ['10:00 AM', '1:00 PM', '3:30 PM', '6:30 PM', '9:00 PM'],
-      isTapped: false),
+      showTime: [
+        '10:00 AM',
+        '1:00 PM',
+        '3:30 PM',
+        '6:30 PM',
+        '9:00 PM'
+      ],
+      reservedSeat: [
+        20,
+        24,
+        33,
+        37,
+        43,
+        50
+      ]),
   MovieModel(
       title: 'Intrusion',
       image: 'assets/images/intrusion.jpg',
@@ -133,12 +174,28 @@ List<MovieModel> movieDataList = [
           'Intrusion is a 2021 American psychological thriller film directed by Adam Salky and written by Christopher Sparling, starring Freida Pinto and Logan Marshall-Green. It was released on September 22, 2021, by Netflix.',
       directorName: 'Adam Salky',
       writerName: 'Christopher Sparling',
-      weekDays: {'Sun': '1', 'Mon': '2', 'Tue': '3', 'Fri': '6', 'Sat': '7'},
+      weekDays: {
+        'Sun': '1',
+        'Mon': '2',
+        'Tue': '3',
+        'Fri': '6',
+        'Sat': '7'
+      },
       showTime: [
         '10:05 AM',
         '1:05 PM',
         '4:30 PM',
         '6:30 PM',
       ],
-      isTapped: false),
+      reservedSeat: [
+        3,
+        4,
+        5,
+        17,
+        23,
+        25,
+        30,
+        33,
+        43
+      ]),
 ];
