@@ -10,16 +10,17 @@ class MovieModel {
   final String? directorName;
   final String? writerName;
   final String? description;
+  final Map<String, String>? weekDays;
 
-  MovieModel({
-    this.title,
-    this.image,
-    this.icon,
-    this.ratingNumber,
-    this.directorName,
-    this.writerName,
-    this.description,
-  });
+  MovieModel(
+      {this.title,
+      this.image,
+      this.icon,
+      this.ratingNumber,
+      this.directorName,
+      this.writerName,
+      this.description,
+      this.weekDays});
 }
 
 List<MovieModel> movieDataList = [
@@ -30,7 +31,15 @@ List<MovieModel> movieDataList = [
       description:
           'Red Notice is a 2021 American action comedy film written, directed, and produced by Rawson Marshall Thurber. Dwayne Johnson, who also served as a producer, stars as an FBI agent who reluctantly teams up with a renowned art thief (Ryan Reynolds) in order to catch an even more notorious criminal (Gal Gadot). The film marks the third collaboration between Thurber and Johnson, following Central Intelligence (2016) and Skyscraper (2018).',
       directorName: 'Rawson Marshall Thurber',
-      writerName: 'Rawson Marshall Thurber'),
+      writerName: 'Rawson Marshall Thurber',
+      weekDays: {
+        'Sun': '1',
+        'Mon': '2',
+        'Tue': '3',
+        'Wed': '4',
+        'Fri': '6',
+        'Sat': '7'
+      }),
   MovieModel(
       title: 'Army of Thives',
       image: 'assets/images/armyofthieves.jpg',
@@ -38,7 +47,8 @@ List<MovieModel> movieDataList = [
       description:
           'Army of Thieves is a 2021 heist comedy film directed by Matthias Schweighöfer from a screenplay by Shay Hatten, based on a story he wrote with Zack Snyder. A prequel to Army of the Dead, it is the second installment in the Army of the Dead franchise; the film stars Schweighöfer, who reprises his role as Ludwig Dieter, alongside a supporting cast that includes Nathalie Emmanuel, Ruby O. Fee, Stuart Martin, Guz Khan, and Jonathan Cohen.',
       directorName: 'Matthias Schweighöfer',
-      writerName: 'Zack Snyder and Shay Hatten'),
+      writerName: 'Zack Snyder and Shay Hatten',
+      weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'}),
   MovieModel(
       title: 'Xtreme',
       image: 'assets/images/xtreme.jpg',
@@ -46,7 +56,8 @@ List<MovieModel> movieDataList = [
       description:
           'Xtreme (Spanish: Xtremo) is a 2021 Spanish action thriller and martial arts film directed by Daniel Benmayor, written by Teo García, Iván Ledesma and Genaro Rodríguez and starring Teo García, Óscar Jaenada, Sergio Peris-Mencheta and Óscar Casas',
       directorName: 'Daniel Benmayor',
-      writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez'),
+      writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez',
+      weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'}),
   MovieModel(
       title: 'The Tomorrow War',
       image: 'assets/images/tomorowar.jpg',
@@ -54,7 +65,14 @@ List<MovieModel> movieDataList = [
       description:
           'The Tomorrow War is a 2021 American military science fiction action film directed by Chris McKay. The picture is produced by David Ellison, Dana Goldberg, Don Granger, David S. Goyer, Jules Daly, and Adam Kolbrenner, and written by Zach Dean. The ensemble cast features Chris Pratt, Yvonne Strahovski, J. K. Simmons, Betty Gilpin, Sam Richardson, Edwin Hodge, Jasmine Mathews, Ryan Kiera Armstrong, and Keith Powers. It follows a mix of present-day soldiers and civilians sent into the future to fight an alien army.',
       directorName: 'Chris McKay',
-      writerName: 'Zach Dean'),
+      writerName: 'Zach Dean',
+      weekDays: {
+        'Sun': '1',
+        'Mon': '2',
+        'Tue': '3',
+        'Wed': '4',
+        'Fri': '6',
+      }),
   MovieModel(
       title: 'Sweet Girl',
       image: 'assets/images/sweetgirl.jpg',
@@ -62,7 +80,8 @@ List<MovieModel> movieDataList = [
       description:
           'Sweet Girl is a 2021 American action thriller film directed by Brian Andrew Mendoza in his feature directorial debut and written by Philip Eisner and Gregg Hurwitz. The film stars Jason Momoa, Isabela Merced, Manuel Garcia-Rulfo, Adria Arjona, Raza Jaffrey, Justin Bartha, Lex Scott Davis, Michael Raymond-James and Amy Brenneman.',
       directorName: 'Brian Andrew Mendoza',
-      writerName: 'Philip Eisner and Gregg Hurwitz'),
+      writerName: 'Philip Eisner and Gregg Hurwitz',
+      weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'}),
   MovieModel(
       title: 'The Unforgiveable',
       image: 'assets/images/unforgiveable.jpg',
@@ -78,7 +97,15 @@ List<MovieModel> movieDataList = [
       description:
           'Nightbooks is a 2021 American dark fantasy film directed by David Yarovesky and written by Mikki Daughtry and Tobias Iaconis. The film stars Winslow Fegley, Lidya Jewett, and Krysten Ritter. Based on the 2018 horror-fantasy children\'s book of the same name by J. A. White, it was released September 15, 2021, on Netflix.',
       directorName: 'David Yarovesky',
-      writerName: 'Mikki Daughtry and Tobias Iaconis'),
+      writerName: 'Mikki Daughtry and Tobias Iaconis',
+      weekDays: {
+        'Sun': '1',
+        'Mon': '2',
+        'Tue': '3',
+        'Wed': '4',
+        'Fri': '6',
+        'Sat': '7'
+      }),
   MovieModel(
       title: 'Intrusion',
       image: 'assets/images/intrusion.jpg',
@@ -86,5 +113,6 @@ List<MovieModel> movieDataList = [
       description:
           'Intrusion is a 2021 American psychological thriller film directed by Adam Salky and written by Christopher Sparling, starring Freida Pinto and Logan Marshall-Green. It was released on September 22, 2021, by Netflix.',
       directorName: 'Adam Salky',
-      writerName: 'Christopher Sparling'),
+      writerName: 'Christopher Sparling',
+      weekDays: {'Sun': '1', 'Mon': '2', 'Tue': '3', 'Fri': '6', 'Sat': '7'}),
 ];
