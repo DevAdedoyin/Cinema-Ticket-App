@@ -88,11 +88,12 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                     : Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color:
-                                movieDataList[widget.index].reservedSeat![3] ==
-                                        index
-                                    ? white
-                                    : seatColor),
+                            color: movieDataList[widget.index]
+                                    .reservedSeat!
+                                    .values
+                                    .contains(index)
+                                ? white
+                                : seatColor),
                       );
               },
               itemCount: 54,
