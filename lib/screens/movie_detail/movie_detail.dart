@@ -161,7 +161,9 @@ class _MovieDetailState extends State<MovieDetail> {
               width: 8,
               height: 8,
               decoration: BoxDecoration(
-                color: gold,
+                color: _position != null && index == _position
+                    ? backgroundColor
+                    : gold.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
