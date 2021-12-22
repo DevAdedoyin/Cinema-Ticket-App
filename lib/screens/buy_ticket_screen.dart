@@ -87,7 +87,7 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                     ? const SizedBox()
                     : Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
+                            borderRadius: BorderRadius.circular(9),
                             color: movieDataList[widget.index]
                                     .reservedSeat!
                                     .values
