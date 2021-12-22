@@ -11,6 +11,7 @@ class MovieModel {
   final String? writerName;
   final String? description;
   final Map<String, String>? weekDays;
+  final bool? isTapped;
 
   MovieModel(
       {this.title,
@@ -20,7 +21,8 @@ class MovieModel {
       this.directorName,
       this.writerName,
       this.description,
-      this.weekDays});
+      this.weekDays,
+      this.isTapped});
 }
 
 List<MovieModel> movieDataList = [
@@ -39,7 +41,8 @@ List<MovieModel> movieDataList = [
         'Wed': '4',
         'Fri': '6',
         'Sat': '7'
-      }),
+      },
+      isTapped: false),
   MovieModel(
       title: 'Army of Thives',
       image: 'assets/images/armyofthieves.jpg',
@@ -48,7 +51,8 @@ List<MovieModel> movieDataList = [
           'Army of Thieves is a 2021 heist comedy film directed by Matthias Schweighöfer from a screenplay by Shay Hatten, based on a story he wrote with Zack Snyder. A prequel to Army of the Dead, it is the second installment in the Army of the Dead franchise; the film stars Schweighöfer, who reprises his role as Ludwig Dieter, alongside a supporting cast that includes Nathalie Emmanuel, Ruby O. Fee, Stuart Martin, Guz Khan, and Jonathan Cohen.',
       directorName: 'Matthias Schweighöfer',
       writerName: 'Zack Snyder and Shay Hatten',
-      weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'}),
+      weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      isTapped: false),
   MovieModel(
       title: 'Xtreme',
       image: 'assets/images/xtreme.jpg',
@@ -57,7 +61,8 @@ List<MovieModel> movieDataList = [
           'Xtreme (Spanish: Xtremo) is a 2021 Spanish action thriller and martial arts film directed by Daniel Benmayor, written by Teo García, Iván Ledesma and Genaro Rodríguez and starring Teo García, Óscar Jaenada, Sergio Peris-Mencheta and Óscar Casas',
       directorName: 'Daniel Benmayor',
       writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez',
-      weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'}),
+      weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      isTapped: false),
   MovieModel(
       title: 'The Tomorrow War',
       image: 'assets/images/tomorowar.jpg',
@@ -72,7 +77,8 @@ List<MovieModel> movieDataList = [
         'Tue': '3',
         'Wed': '4',
         'Fri': '6',
-      }),
+      },
+      isTapped: false),
   MovieModel(
       title: 'Sweet Girl',
       image: 'assets/images/sweetgirl.jpg',
@@ -81,7 +87,8 @@ List<MovieModel> movieDataList = [
           'Sweet Girl is a 2021 American action thriller film directed by Brian Andrew Mendoza in his feature directorial debut and written by Philip Eisner and Gregg Hurwitz. The film stars Jason Momoa, Isabela Merced, Manuel Garcia-Rulfo, Adria Arjona, Raza Jaffrey, Justin Bartha, Lex Scott Davis, Michael Raymond-James and Amy Brenneman.',
       directorName: 'Brian Andrew Mendoza',
       writerName: 'Philip Eisner and Gregg Hurwitz',
-      weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'}),
+      weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      isTapped: false),
   MovieModel(
       title: 'The Unforgiveable',
       image: 'assets/images/unforgiveable.jpg',
@@ -89,7 +96,8 @@ List<MovieModel> movieDataList = [
       description:
           'The Unforgivable is a 2021 drama film directed by Nora Fingscheidt and written by Peter Craig, Hillary Seitz and Courtenay Miles,[2] based on the 2009 British miniseries Unforgiven written by Sally Wainwright. The film stars Sandra Bullock as a woman who attempts to rebuild her life after serving time in prison for committing a violent crime. It also stars Vincent D\'Onofrio, Jon Bernthal, Viola Davis, Richard Thomas, Linda Emond, Aisling Franciosi, Rob Morgan.',
       directorName: 'Nora Fingscheidt',
-      writerName: 'Peter Craig, Hillary Seitz and Courtenay Miles'),
+      writerName: 'Peter Craig, Hillary Seitz and Courtenay Miles',
+      isTapped: false),
   MovieModel(
       title: 'Night Books',
       image: 'assets/images/nightbooks.jpg',
@@ -105,7 +113,8 @@ List<MovieModel> movieDataList = [
         'Wed': '4',
         'Fri': '6',
         'Sat': '7'
-      }),
+      },
+      isTapped: false),
   MovieModel(
       title: 'Intrusion',
       image: 'assets/images/intrusion.jpg',
@@ -114,5 +123,6 @@ List<MovieModel> movieDataList = [
           'Intrusion is a 2021 American psychological thriller film directed by Adam Salky and written by Christopher Sparling, starring Freida Pinto and Logan Marshall-Green. It was released on September 22, 2021, by Netflix.',
       directorName: 'Adam Salky',
       writerName: 'Christopher Sparling',
-      weekDays: {'Sun': '1', 'Mon': '2', 'Tue': '3', 'Fri': '6', 'Sat': '7'}),
+      weekDays: {'Sun': '1', 'Mon': '2', 'Tue': '3', 'Fri': '6', 'Sat': '7'},
+      isTapped: false),
 ];

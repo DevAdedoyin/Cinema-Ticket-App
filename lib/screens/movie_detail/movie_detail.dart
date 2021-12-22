@@ -125,55 +125,16 @@ class _MovieDetailState extends State<MovieDetail> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 7),
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                            color: white.withOpacity(0.5), width: 0.5),
-                      ),
-                      height: 60,
-                      width: 50,
-                      child: Column(
-                        children: [
-                          Container(
-                            width: 8,
-                            height: 8,
-                            decoration: BoxDecoration(
-                              color: gold,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            movieDataList[widget.index]
-                                .weekDays!
-                                .keys
-                                .elementAt(index),
-                            style: TextStyle(
-                              color: white.withOpacity(0.5),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 6,
-                          ),
-                          Text(
-                            movieDataList[widget.index]
-                                .weekDays!
-                                .values
-                                .elementAt(index),
-                            style: TextStyle(
-                              
-                                color: white.withOpacity(0.5), fontSize: 25),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
+                      onTap: () {
+                        setState(() {
+                          print('TAPPED');
+                          // _position = index;
+                          _wdColor = movieDataList[widget.index].isTapped!
+                              ? red!
+                              : backgroundColor;
+                        });
+                      },
+                      child: weekdayCard(index, widget.index, _wdColor));
                 },
                 shrinkWrap: true,
               ),
@@ -183,4 +144,49 @@ class _MovieDetailState extends State<MovieDetail> {
       ),
     );
   }
+
+  Color _wdColor = backgroundColor;
+
+  Widget weekdayCard(int index, int widgetIndex, Color color) => Container(
+        padding: const EdgeInsets.symmetric(vertical: 7),
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: white.withOpacity(0.5), width: 0.5),
+        ),
+        height: 60,
+        width: 50,
+        child: Column(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(
+                color: gold,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              movieDataList[widgetIndex].weekDays!.keys.elementAt(index),
+              style: TextStyle(
+                color: white.withOpacity(0.5),
+              ),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            Text(
+              movieDataList[widgetIndex].weekDays!.values.elementAt(index),
+              style: TextStyle(
+                  color: white.withOpacity(0.5),
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
+      );
 }
