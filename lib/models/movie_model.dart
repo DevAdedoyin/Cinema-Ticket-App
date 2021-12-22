@@ -12,7 +12,7 @@ class MovieModel {
   final String? description;
   final Map<String, String>? weekDays;
   final List<String>? showTime;
-  final List<int>? reservedSeat;
+  final Map<int, int>? reservedSeat;
 
   MovieModel({
     this.title,
@@ -52,15 +52,15 @@ List<MovieModel> movieDataList = [
         '6:00 PM',
         '9:00 PM'
       ],
-      reservedSeat: [
-        13,
-        24,
-        34,
-        35,
-        47,
-        50,
-        19
-      ]),
+      reservedSeat: {
+        1: 13,
+        2: 24,
+        3: 34,
+        4: 35,
+        5: 47,
+        6: 50,
+        7: 19
+      }),
   MovieModel(
       title: 'Army of Thives',
       image: 'assets/images/armyofthieves.jpg',
@@ -71,7 +71,7 @@ List<MovieModel> movieDataList = [
       writerName: 'Zack Snyder and Shay Hatten',
       weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:00 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
-      reservedSeat: [19, 24, 30, 35, 48, 51, 23, 38]),
+      reservedSeat: {1: 12, 2: 23, 3: 33, 4: 3, 5: 47, 6: 50, 7: 18}),
   MovieModel(
       title: 'Xtreme',
       image: 'assets/images/xtreme.jpg',
@@ -80,9 +80,26 @@ List<MovieModel> movieDataList = [
           'Xtreme (Spanish: Xtremo) is a 2021 Spanish action thriller and martial arts film directed by Daniel Benmayor, written by Teo García, Iván Ledesma and Genaro Rodríguez and starring Teo García, Óscar Jaenada, Sergio Peris-Mencheta and Óscar Casas',
       directorName: 'Daniel Benmayor',
       writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez',
-      weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
-      showTime: ['10:30 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
-      reservedSeat: [15, 20, 35, 30, 37, 49, 19]),
+      weekDays: {
+        'Sun': '1',
+        'Wed': '4',
+        'Fri': '6',
+        'Sat': '7'
+      },
+      showTime: [
+        '10:30 AM',
+        '1:00 PM',
+        '5:00 PM',
+        '8:00 PM'
+      ],
+      reservedSeat: {
+        1: 10,
+        2: 20,
+        3: 23,
+        4: 13,
+        5: 49,
+        6: 50,
+      }),
   MovieModel(
       title: 'The Tomorrow War',
       image: 'assets/images/tomorowar.jpg',
@@ -105,15 +122,15 @@ List<MovieModel> movieDataList = [
         '6:00 PM',
         '8:30 PM'
       ],
-      reservedSeat: [
-        2,
-        4,
-        30,
-        35,
-        44,
-        50,
-        34
-      ]),
+      reservedSeat: {
+        1: 9,
+        2: 25,
+        3: 36,
+        4: 37,
+        5: 49,
+        6: 50,
+        7: 18
+      }),
   MovieModel(
       title: 'Sweet Girl',
       image: 'assets/images/sweetgirl.jpg',
@@ -124,7 +141,7 @@ List<MovieModel> movieDataList = [
       writerName: 'Philip Eisner and Gregg Hurwitz',
       weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:00 AM', '12:30 PM', '3:30 PM', '6:00 PM', '8:15 PM'],
-      reservedSeat: [3, 23, 30, 15, 46, 5, 49]),
+      reservedSeat: {1: 5, 2: 6, 3: 13, 4: 18, 5: 49, 6: 50, 7: 12}),
   MovieModel(
       title: 'The Unforgiveable',
       image: 'assets/images/unforgiveable.jpg',
@@ -134,7 +151,7 @@ List<MovieModel> movieDataList = [
       directorName: 'Nora Fingscheidt',
       writerName: 'Peter Craig, Hillary Seitz and Courtenay Miles',
       showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '5:30 PM', '8:00 PM'],
-      reservedSeat: [2, 4, 33, 15, 46, 5, 27]),
+      reservedSeat: {1: 6, 2: 10, 3: 39, 4: 43, 5: 44, 6: 50, 7: 51}),
   MovieModel(
       title: 'Night Books',
       image: 'assets/images/nightbooks.jpg',
@@ -158,14 +175,15 @@ List<MovieModel> movieDataList = [
         '6:30 PM',
         '9:00 PM'
       ],
-      reservedSeat: [
-        20,
-        24,
-        33,
-        37,
-        43,
-        50
-      ]),
+      reservedSeat: {
+        1: 6,
+        2: 23,
+        3: 33,
+        4: 16,
+        5: 17,
+        6: 50,
+        7: 51
+      }),
   MovieModel(
       title: 'Intrusion',
       image: 'assets/images/intrusion.jpg',
@@ -187,15 +205,13 @@ List<MovieModel> movieDataList = [
         '4:30 PM',
         '6:30 PM',
       ],
-      reservedSeat: [
-        3,
-        4,
-        5,
-        17,
-        23,
-        25,
-        30,
-        33,
-        43
-      ]),
+      reservedSeat: {
+        1: 12,
+        2: 5,
+        3: 34,
+        4: 35,
+        5: 36,
+        6: 50,
+        7: 49
+      }),
 ];
