@@ -148,9 +148,13 @@ class _MovieDetailState extends State<MovieDetail> {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(red),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)))),
+                  backgroundColor: MaterialStateProperty.all(red),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
               ),
             )
           ],

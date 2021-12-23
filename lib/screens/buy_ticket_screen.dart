@@ -98,6 +98,9 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                                   selectedList.contains(index)
                                       ? selectedList.remove(index)
                                       : selectedList.add(index);
+                                  _price = movieDataList[widget.index].price! *
+                                      selectedList.length;
+                                  print(_price);
                                 });
                               },
                         child: Container(
@@ -152,7 +155,8 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
             height: 50,
             margin: const EdgeInsets.only(bottom: 20, top: 25),
             child: ElevatedButton(
-              onPressed: () => Get.off(() => const HomeScreen()),
+              onPressed:
+                  _price == 0 ? null : () => Get.off(() => const HomeScreen()),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -166,9 +170,9 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                     ),
                   ),
                   const Text('|'),
-                  const Text('\$25',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+                  Text('\$${_price.round()}',
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.bold))
                 ],
               ),
               style: ButtonStyle(
@@ -188,6 +192,8 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
   List<int> selectedList = [];
 
   int? _position;
+
+  double _price = 0;
 
   Widget timeCard(int pos) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
