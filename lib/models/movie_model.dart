@@ -13,6 +13,7 @@ class MovieModel {
   final Map<String, String>? weekDays;
   final List<String>? showTime;
   final Map<int, int>? reservedSeat;
+  final double? price;
 
   MovieModel({
     this.title,
@@ -25,6 +26,7 @@ class MovieModel {
     this.weekDays,
     this.showTime,
     this.reservedSeat,
+    this.price,
   });
 }
 
@@ -45,22 +47,9 @@ List<MovieModel> movieDataList = [
         'Fri': '6',
         'Sat': '7'
       },
-      showTime: [
-        '10:00 AM',
-        '12:30 PM',
-        '3:00 PM',
-        '6:00 PM',
-        '9:00 PM'
-      ],
-      reservedSeat: {
-        1: 13,
-        2: 24,
-        3: 34,
-        4: 35,
-        5: 47,
-        6: 50,
-        7: 19
-      }),
+      showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '6:00 PM', '9:00 PM'],
+      reservedSeat: {1: 13, 2: 24, 3: 34, 4: 35, 5: 47, 6: 50, 7: 19},
+      price: 75),
   MovieModel(
       title: 'Army of Thives',
       image: 'assets/images/armyofthieves.jpg',
@@ -71,7 +60,8 @@ List<MovieModel> movieDataList = [
       writerName: 'Zack Snyder and Shay Hatten',
       weekDays: {'Sun': '1', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:00 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
-      reservedSeat: {1: 12, 2: 23, 3: 33, 4: 3, 5: 47, 6: 50, 7: 18}),
+      reservedSeat: {1: 12, 2: 23, 3: 33, 4: 3, 5: 47, 6: 50, 7: 18},
+      price: 40),
   MovieModel(
       title: 'Xtreme',
       image: 'assets/images/xtreme.jpg',
@@ -80,18 +70,8 @@ List<MovieModel> movieDataList = [
           'Xtreme (Spanish: Xtremo) is a 2021 Spanish action thriller and martial arts film directed by Daniel Benmayor, written by Teo García, Iván Ledesma and Genaro Rodríguez and starring Teo García, Óscar Jaenada, Sergio Peris-Mencheta and Óscar Casas',
       directorName: 'Daniel Benmayor',
       writerName: 'Teo García, Iván Ledesma and Genaro Rodríguez',
-      weekDays: {
-        'Sun': '1',
-        'Wed': '4',
-        'Fri': '6',
-        'Sat': '7'
-      },
-      showTime: [
-        '10:30 AM',
-        '1:00 PM',
-        '5:00 PM',
-        '8:00 PM'
-      ],
+      weekDays: {'Sun': '1', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
+      showTime: ['10:30 AM', '1:00 PM', '5:00 PM', '8:00 PM'],
       reservedSeat: {
         1: 10,
         2: 20,
@@ -99,7 +79,8 @@ List<MovieModel> movieDataList = [
         4: 13,
         5: 49,
         6: 50,
-      }),
+      },
+      price: 35),
   MovieModel(
       title: 'The Tomorrow War',
       image: 'assets/images/tomorowar.jpg',
@@ -115,22 +96,9 @@ List<MovieModel> movieDataList = [
         'Wed': '4',
         'Fri': '6',
       },
-      showTime: [
-        '10:45 AM',
-        '1:00 PM',
-        '3:30 PM',
-        '6:00 PM',
-        '8:30 PM'
-      ],
-      reservedSeat: {
-        1: 9,
-        2: 25,
-        3: 36,
-        4: 37,
-        5: 49,
-        6: 50,
-        7: 18
-      }),
+      showTime: ['10:45 AM', '1:00 PM', '3:30 PM', '6:00 PM', '8:30 PM'],
+      reservedSeat: {1: 9, 2: 25, 3: 36, 4: 37, 5: 49, 6: 50, 7: 18},
+      price: 65),
   MovieModel(
       title: 'Sweet Girl',
       image: 'assets/images/sweetgirl.jpg',
@@ -141,7 +109,8 @@ List<MovieModel> movieDataList = [
       writerName: 'Philip Eisner and Gregg Hurwitz',
       weekDays: {'Mon': '2', 'Tue': '3', 'Wed': '4', 'Fri': '6', 'Sat': '7'},
       showTime: ['10:00 AM', '12:30 PM', '3:30 PM', '6:00 PM', '8:15 PM'],
-      reservedSeat: {1: 5, 2: 6, 3: 13, 4: 18, 5: 49, 6: 50, 7: 12}),
+      reservedSeat: {1: 5, 2: 6, 3: 13, 4: 18, 5: 49, 6: 50, 7: 12},
+      price: 45),
   MovieModel(
       title: 'The Unforgiveable',
       image: 'assets/images/unforgiveable.jpg',
@@ -151,7 +120,8 @@ List<MovieModel> movieDataList = [
       directorName: 'Nora Fingscheidt',
       writerName: 'Peter Craig, Hillary Seitz and Courtenay Miles',
       showTime: ['10:00 AM', '12:30 PM', '3:00 PM', '5:30 PM', '8:00 PM'],
-      reservedSeat: {1: 6, 2: 10, 3: 39, 4: 43, 5: 44, 6: 50, 7: 51}),
+      reservedSeat: {1: 6, 2: 10, 3: 39, 4: 43, 5: 44, 6: 50, 7: 51},
+      price: 70),
   MovieModel(
       title: 'Night Books',
       image: 'assets/images/nightbooks.jpg',
@@ -168,22 +138,9 @@ List<MovieModel> movieDataList = [
         'Fri': '6',
         'Sat': '7'
       },
-      showTime: [
-        '10:00 AM',
-        '1:00 PM',
-        '3:30 PM',
-        '6:30 PM',
-        '9:00 PM'
-      ],
-      reservedSeat: {
-        1: 6,
-        2: 23,
-        3: 33,
-        4: 16,
-        5: 17,
-        6: 50,
-        7: 51
-      }),
+      showTime: ['10:00 AM', '1:00 PM', '3:30 PM', '6:30 PM', '9:00 PM'],
+      reservedSeat: {1: 6, 2: 23, 3: 33, 4: 16, 5: 17, 6: 50, 7: 51},
+      price: 40),
   MovieModel(
       title: 'Intrusion',
       image: 'assets/images/intrusion.jpg',
@@ -192,26 +149,13 @@ List<MovieModel> movieDataList = [
           'Intrusion is a 2021 American psychological thriller film directed by Adam Salky and written by Christopher Sparling, starring Freida Pinto and Logan Marshall-Green. It was released on September 22, 2021, by Netflix.',
       directorName: 'Adam Salky',
       writerName: 'Christopher Sparling',
-      weekDays: {
-        'Sun': '1',
-        'Mon': '2',
-        'Tue': '3',
-        'Fri': '6',
-        'Sat': '7'
-      },
+      weekDays: {'Sun': '1', 'Mon': '2', 'Tue': '3', 'Fri': '6', 'Sat': '7'},
       showTime: [
         '10:05 AM',
         '1:05 PM',
         '4:30 PM',
         '6:30 PM',
       ],
-      reservedSeat: {
-        1: 12,
-        2: 5,
-        3: 34,
-        4: 35,
-        5: 36,
-        6: 50,
-        7: 49
-      }),
+      reservedSeat: {1: 12, 2: 5, 3: 34, 4: 35, 5: 36, 6: 50, 7: 49},
+      price: 70),
 ];

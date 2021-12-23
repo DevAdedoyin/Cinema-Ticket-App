@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:movie_ticket_app/models/movie_model.dart';
+import 'package:movie_ticket_app/screens/home_screen/home_screen.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 
 class BuyTicketScreen extends StatefulWidget {
@@ -141,6 +143,39 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                         ],
                       ))
             ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: 260,
+            height: 50,
+            margin: const EdgeInsets.only(bottom: 20, top: 25),
+            child: ElevatedButton(
+              onPressed: () => Get.off(() => const HomeScreen()),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 150,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Buy Ticket',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const Text('|'),
+                  const Text('\$25',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+                ],
+              ),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(red),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)))),
+            ),
           )
         ],
       ),
