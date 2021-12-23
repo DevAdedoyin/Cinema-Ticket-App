@@ -115,14 +115,43 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
               itemCount: 54,
               shrinkWrap: true,
             ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ...List.generate(
+                  seatType.length,
+                  (index) => Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(right: 5),
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                                color: seatTypeColor[index],
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                          Text(
+                            seatType[index],
+                            style: TextStyle(color: white.withOpacity(0.5)),
+                          )
+                        ],
+                      ))
+            ],
           )
         ],
       ),
     );
   }
 
+  List seatTypeColor = [seatColor, white, red];
+  List seatType = ['Available', 'Reserved', 'Selected'];
+
   List<int> selectedList = [];
-  int? _seatPos;
+
   int? _position;
 
   Widget timeCard(int pos) => Container(
