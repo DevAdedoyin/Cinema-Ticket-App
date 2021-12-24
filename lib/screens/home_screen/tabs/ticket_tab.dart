@@ -10,6 +10,10 @@ class TicketTab extends StatefulWidget {
 class _TicketTabState extends State<TicketTab> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Column(
+        children: [Text('Tickets')],
+      ),
+    );
   }
 }
