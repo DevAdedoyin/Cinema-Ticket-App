@@ -15,7 +15,21 @@ class _TicketTabState extends State<TicketTab> {
     return SafeArea(
       child: Column(
         children: [
-          TicketHeader()
+          TicketHeader(),
+          Container(
+            alignment: Alignment.center,
+            width: 200,
+            padding: EdgeInsets.symmetric(vertical: 5),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [white.withOpacity(0.2), backgroundColor]),
+                borderRadius: BorderRadius.circular(15)),
+            child: const Text(
+              'Cinema',
+              style: TextStyle(
+                  color: white, fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+          )
         ],
       ),
     );
