@@ -12,9 +12,6 @@ List<Icon> iconList = const [
   Icon(
     FontAwesomeIcons.ticketAlt,
   ),
-  Icon(
-    FontAwesomeIcons.user,
-  ),
 ];
 
 // Bottom Navigation Bar Item
