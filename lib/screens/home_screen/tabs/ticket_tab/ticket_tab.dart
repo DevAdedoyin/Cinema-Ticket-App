@@ -15,11 +15,11 @@ class _TicketTabState extends State<TicketTab> {
     return SafeArea(
       child: Column(
         children: [
-          TicketHeader(),
+          const TicketHeader(),
           Container(
             alignment: Alignment.center,
             width: 200,
-            padding: EdgeInsets.symmetric(vertical: 5),
+            padding: const EdgeInsets.symmetric(vertical: 5),
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     colors: [white.withOpacity(0.2), backgroundColor]),
@@ -29,6 +29,18 @@ class _TicketTabState extends State<TicketTab> {
               style: TextStyle(
                   color: white, fontSize: 22, fontWeight: FontWeight.bold),
             ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+            alignment: Alignment.centerLeft,
+            child: RichText(
+                text: TextSpan(style: TextStyle(fontSize: 18), children: [
+              TextSpan(
+                text: 'Today',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              TextSpan(text: ' tickets')
+            ])),
           )
         ],
       ),
