@@ -23,7 +23,7 @@ class _TicketTabState extends State<TicketTab> {
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     colors: [white.withOpacity(0.2), backgroundColor]),
-                borderRadius: BorderRadius.circular(15)),
+                borderRadius: BorderRadius.circular(12)),
             child: const Text(
               'Cinema',
               style: TextStyle(
@@ -34,14 +34,15 @@ class _TicketTabState extends State<TicketTab> {
             margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
             alignment: Alignment.centerLeft,
             child: RichText(
-                text: TextSpan(style: TextStyle(fontSize: 18), children: [
-              TextSpan(
-                text: 'Today',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              TextSpan(text: ' tickets')
-            ])),
-          )
+              text: const TextSpan(style: TextStyle(fontSize: 18), children: [
+                TextSpan(
+                  text: 'Today',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: ' tickets')
+              ]),
+            ),
+          ),
         ],
       ),
     );
