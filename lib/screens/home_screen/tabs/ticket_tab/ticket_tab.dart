@@ -47,10 +47,14 @@ class _TicketTabState extends State<TicketTab> {
           Container(
             width: double.maxFinite,
             height: 200,
-            alignment: Alignment.center,
             child: Stack(
+              alignment: Alignment.center,
               children: [
-                Positioned(child: ),
+                Positioned(
+                  child: imdbRating(),
+                  right: 17,
+                  bottom: 75,
+                ),
                 Container(
                   width: 290,
                   height: 185,
