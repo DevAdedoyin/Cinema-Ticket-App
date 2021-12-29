@@ -7,15 +7,19 @@ Widget starRatings(String ratingNum) => Row(
         const Icon(
           Icons.star,
           color: yellow,
-          size: 20,
+          size: 18,
         ),
         Text(
           ratingNum,
           style: const TextStyle(
-              color: gold, fontSize: 18, fontWeight: FontWeight.bold),
+              color: gold, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ],
+
+
     );
+
+   
 
 Widget ratingsAndImdb(double margin, String ratingNum) => Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

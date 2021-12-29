@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/screens/home_screen/tabs/ticket_tab/ticket_header.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
+import 'package:movie_ticket_app/widgets/ratings_and_imdb.dart';
 
 class TicketTab extends StatefulWidget {
   const TicketTab({Key? key}) : super(key: key);
@@ -49,6 +50,7 @@ class _TicketTabState extends State<TicketTab> {
             alignment: Alignment.center,
             child: Stack(
               children: [
+                Positioned(child: ),
                 Container(
                   width: 290,
                   height: 185,
@@ -78,18 +80,27 @@ class _TicketTabState extends State<TicketTab> {
                         margin: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 8),
                         child: Column(
-                          children: const [
-                            SizedBox(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const SizedBox(
                               width: 130,
                               child: Text(
                                 'The man and the goat and the horse',
-                                style: TextStyle(fontSize: 20, color: white),
+                                style: TextStyle(fontSize: 18, color: white),
                               ),
                             ),
-                            
+                            starRatings('20'),
+                            const SizedBox(
+                              width: 120,
+                              child: Text(
+                                'Adedoyin Oluwaleke',
+                                style: TextStyle(fontSize: 15, color: white),
+                              ),
+                            )
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
