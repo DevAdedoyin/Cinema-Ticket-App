@@ -45,8 +45,6 @@ class _HomeMoviesState extends State<HomeMovies> {
           scrollDirection: Axis.horizontal,
           itemCount: movieDataList.length,
           itemBuilder: (_, index) {
-            // print(_controller.offset);
-            // print(_angle);
             return index == 0
                 ? Row(
                     children: [

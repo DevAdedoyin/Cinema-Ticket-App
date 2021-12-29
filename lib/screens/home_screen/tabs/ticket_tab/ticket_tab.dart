@@ -50,7 +50,7 @@ class _TicketTabState extends State<TicketTab> {
             child: Stack(
               children: [
                 Container(
-                  width: 270,
+                  width: 290,
                   height: 185,
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -73,10 +73,25 @@ class _TicketTabState extends State<TicketTab> {
                             'assets/images/sweetgirl.jpg',
                           ),
                         ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
+                        child: Column(
+                          children: const [
+                            SizedBox(
+                              width: 130,
+                              child: Text(
+                                'The man and the goat and the horse',
+                                style: TextStyle(fontSize: 20, color: white),
+                              ),
+                            ),
+                            
+                          ],
+                        ),
                       )
                     ],
                   ),
-                  
                 ),
               ],
             ),
