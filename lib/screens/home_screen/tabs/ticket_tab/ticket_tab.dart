@@ -39,10 +39,29 @@ class _TicketTabState extends State<TicketTab> {
                   text: 'Today',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                TextSpan(text: ' tickets')
+                TextSpan(text: ' tickets'),
               ]),
             ),
           ),
+          Container(
+            width: double.maxFinite,
+            height: 200,
+            alignment: Alignment.center,
+            child: Stack(
+              children: [
+                Container(
+                  width: 270,
+                  height: 180,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      gradient: LinearGradient(colors: [
+                        white.withOpacity(0.2),
+                        backgroundColor.withOpacity(0.2),
+                      ])),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
