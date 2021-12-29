@@ -51,13 +51,32 @@ class _TicketTabState extends State<TicketTab> {
               children: [
                 Container(
                   width: 270,
-                  height: 180,
+                  height: 185,
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(colors: [
-                        white.withOpacity(0.2),
-                        backgroundColor.withOpacity(0.2),
-                      ])),
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                      colors: [
+                        white.withOpacity(0.4),
+                        seatColor!.withOpacity(0.2),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: SizedBox(
+                          child: Image.asset(
+                            'assets/images/sweetgirl.jpg',
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  
                 ),
               ],
             ),
