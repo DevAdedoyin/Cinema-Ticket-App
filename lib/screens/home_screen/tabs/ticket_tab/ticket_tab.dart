@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_ticket_app/models/movie_model.dart';
 import 'package:movie_ticket_app/screens/home_screen/tabs/ticket_tab/ticket_header.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
 import 'package:movie_ticket_app/widgets/ratings_and_imdb.dart';
@@ -44,20 +45,31 @@ class _TicketTabState extends State<TicketTab> {
               ]),
             ),
           ),
-          ListView.builder(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemCount: 4,
-              itemBuilder: (_, index) {
-                return todayTicketCard();
-              })
+          Container(
+            padding: EdgeInsets.only(right: 10),
+            height: 200,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: 4,
+                itemBuilder: (_, index) {
+                  return todayTicketCard(
+                      movieDataList[index].image!,
+                      movieDataList[index].title,
+                      movieDataList[index].directorName,
+                      movieDataList[index].ratingNumber);
+                }),
+          )
         ],
       ),
     );
   }
 
-  Widget todayTicketCard() => Container(
-        width: double.maxFinite,
+  Widget todayTicketCard(String image, title, director, ratings) => Container(
+        width: 350,
+        margin: EdgeInsets.only(
+          left: 5,
+        ),
         height: 200,
         child: Stack(
           alignment: Alignment.center,
@@ -88,7 +100,7 @@ class _TicketTabState extends State<TicketTab> {
                     borderRadius: BorderRadius.circular(10),
                     child: SizedBox(
                       child: Image.asset(
-                        'assets/images/sweetgirl.jpg',
+                        image,
                       ),
                     ),
                   ),
@@ -99,18 +111,18 @@ class _TicketTabState extends State<TicketTab> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 130,
                           child: Text(
-                            'The man and the goat and the horse',
+                            title,
                             style: TextStyle(fontSize: 18, color: white),
                           ),
                         ),
-                        starRatings('20'),
-                        const SizedBox(
+                        starRatings(ratings),
+                        SizedBox(
                           width: 120,
                           child: Text(
-                            'Adedoyin Oluwaleke',
+                            director,
                             style: TextStyle(fontSize: 15, color: white),
                           ),
                         )
