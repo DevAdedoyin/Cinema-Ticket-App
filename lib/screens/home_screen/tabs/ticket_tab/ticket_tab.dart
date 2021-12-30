@@ -15,59 +15,89 @@ class _TicketTabState extends State<TicketTab> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          const TicketHeader(),
-          Container(
-            alignment: Alignment.center,
-            width: 200,
-            padding: const EdgeInsets.symmetric(vertical: 5),
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [white.withOpacity(0.2), backgroundColor]),
-                borderRadius: BorderRadius.circular(12)),
-            child: const Text(
-              'Cinema',
-              style: TextStyle(
-                  color: white, fontSize: 22, fontWeight: FontWeight.bold),
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            const TicketHeader(),
+            Container(
+              alignment: Alignment.center,
+              width: 200,
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [white.withOpacity(0.2), backgroundColor]),
+                  borderRadius: BorderRadius.circular(12)),
+              child: const Text(
+                'Cinema',
+                style: TextStyle(
+                    color: white, fontSize: 22, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            alignment: Alignment.centerLeft,
-            child: RichText(
-              text: const TextSpan(style: TextStyle(fontSize: 18), children: [
-                TextSpan(
-                  text: 'Today',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                TextSpan(text: ' tickets'),
-              ]),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+              alignment: Alignment.centerLeft,
+              child: RichText(
+                text: const TextSpan(style: TextStyle(fontSize: 18), children: [
+                  TextSpan(
+                    text: 'Today',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: ' tickets'),
+                ]),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 10),
-            height: 200,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: 4,
-                itemBuilder: (_, index) {
-                  return todayTicketCard(
-                      movieDataList[index].image!,
-                      movieDataList[index].title,
-                      movieDataList[index].directorName,
-                      movieDataList[index].ratingNumber);
-                }),
-          )
-        ],
+            Container(
+              padding: EdgeInsets.only(right: 10),
+              height: 200,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: 4,
+                  itemBuilder: (_, index) {
+                    return ticketCard(
+                        movieDataList[index].image!,
+                        movieDataList[index].title,
+                        movieDataList[index].directorName,
+                        movieDataList[index].ratingNumber);
+                  }),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+              alignment: Alignment.centerLeft,
+              child: RichText(
+                text: const TextSpan(style: TextStyle(fontSize: 18), children: [
+                  TextSpan(
+                    text: 'Upcoming',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: ' tickets'),
+                ]),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(right: 10),
+              child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: movieDataList.length,
+                  itemBuilder: (_, index) {
+                    return ticketCard(
+                        movieDataList[index].image!,
+                        movieDataList[index].title,
+                        movieDataList[index].directorName,
+                        movieDataList[index].ratingNumber);
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }
 
-  Widget todayTicketCard(String image, title, director, ratings) => Container(
+  Widget ticketCard(String image, title, director, ratings) => Container(
         width: 350,
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: 5,
         ),
         height: 200,
