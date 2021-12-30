@@ -44,75 +44,83 @@ class _TicketTabState extends State<TicketTab> {
               ]),
             ),
           ),
-          Container(
-            width: double.maxFinite,
-            height: 200,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Positioned(
-                  child: imdbRating(),
-                  right: 17,
-                  bottom: 75,
-                ),
-                Container(
-                  width: 290,
-                  height: 185,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                      colors: [
-                        white.withOpacity(0.4),
-                        seatColor!.withOpacity(0.2),
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: SizedBox(
-                          child: Image.asset(
-                            'assets/images/sweetgirl.jpg',
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const SizedBox(
-                              width: 130,
-                              child: Text(
-                                'The man and the goat and the horse',
-                                style: TextStyle(fontSize: 18, color: white),
-                              ),
-                            ),
-                            starRatings('20'),
-                            const SizedBox(
-                              width: 120,
-                              child: Text(
-                                'Adedoyin Oluwaleke',
-                                style: TextStyle(fontSize: 15, color: white),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
+          ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: 4,
+              itemBuilder: (_, index) {
+                return todayTicketCard();
+              })
         ],
       ),
     );
   }
+
+  Widget todayTicketCard() => Container(
+        width: double.maxFinite,
+        height: 200,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              child: imdbRating(),
+              right: 17,
+              bottom: 75,
+            ),
+            Container(
+              width: 290,
+              height: 185,
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  colors: [
+                    white.withOpacity(0.4),
+                    seatColor!.withOpacity(0.2),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: SizedBox(
+                      child: Image.asset(
+                        'assets/images/sweetgirl.jpg',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const SizedBox(
+                          width: 130,
+                          child: Text(
+                            'The man and the goat and the horse',
+                            style: TextStyle(fontSize: 18, color: white),
+                          ),
+                        ),
+                        starRatings('20'),
+                        const SizedBox(
+                          width: 120,
+                          child: Text(
+                            'Adedoyin Oluwaleke',
+                            style: TextStyle(fontSize: 15, color: white),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
 }
