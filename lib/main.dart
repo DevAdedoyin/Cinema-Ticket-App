@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Movie Ticket',
       theme: ThemeData(
-          primarySwatch: Colors.blue, scaffoldBackgroundColor: backgroundColor),
+          fontFamily: 'Oxygen',
+          primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: backgroundColor),
       home: const HomeScreen(),
     );
   }
