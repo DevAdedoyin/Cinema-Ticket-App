@@ -209,7 +209,7 @@ class _MovieDetailState extends State<MovieDetail> {
                   color: _position != null && index == _position
                       ? white
                       : white.withOpacity(0.5),
-                  fontSize: 25,
+                  fontSize: 23,
                   fontWeight: FontWeight.bold),
             )
           ],

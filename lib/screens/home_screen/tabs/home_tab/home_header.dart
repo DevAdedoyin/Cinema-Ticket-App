@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
+import 'package:movie_ticket_app/themes.dart/margin.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);

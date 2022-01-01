@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_ticket_app/themes.dart/colors.dart';
+import 'package:movie_ticket_app/themes.dart/margin.dart';
 
 class HomeSearch extends StatelessWidget {
   const HomeSearch({Key? key}) : super(key: key);
