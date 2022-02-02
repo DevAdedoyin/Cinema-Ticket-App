@@ -1,6 +1,6 @@
 https://user-images.githubusercontent.com/59482569/151787868-35e18212-cef4-45ee-a770-01116a628d34.mp4
 
-# Movie Ticket App
+# Cinema Ticket App
 
 # This is an app that simulates app used to book movies in cinemas.
 
