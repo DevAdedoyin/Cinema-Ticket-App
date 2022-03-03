@@ -7,3 +7,5 @@ https://user-images.githubusercontent.com/59482569/151787868-35e18212-cef4-45ee-
 # The purpose of this project is just to simulate a movie ticket booking app user interface. 
 
 # No Backend is involved.
+
+# State Management: GetX
